@@ -16,7 +16,5 @@ public class MainActivity extends AppCompatActivity {
 
         tv.setText("I am superman");
 
-
-
     }
 }
