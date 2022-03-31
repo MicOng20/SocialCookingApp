@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738386450311",
+    "project_id": "socialcookingapp-3a078",
+    "storage_bucket": "socialcookingapp-3a078.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738386450311:android:380d69dc8b68c80c93e522",
+        "android_client_info": {
+          "package_name": "my.edu.utar.socialcookingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738386450311-vcvddgucevq1pl54bplig2mr2v0p7m0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSMCat8FB5xRP3MR--RXq-GKr-MUK_aXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738386450311-vcvddgucevq1pl54bplig2mr2v0p7m0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
