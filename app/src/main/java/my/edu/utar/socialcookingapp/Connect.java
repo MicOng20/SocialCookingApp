@@ -21,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class Connect extends AppCompatActivity {
 
@@ -64,6 +66,14 @@ public class Connect extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(Connect.this,EmailLogin.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.facebookSignIn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Connect.this,FacebookAuth.class);
                 startActivity(intent);
             }
         });
