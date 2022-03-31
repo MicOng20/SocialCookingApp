@@ -10,11 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
         <activity
+            android:name=".EmailRegister"
+            android:exported="false" />
+        <activity
+            android:name=".EmailLogin"
+            android:exported="false" />
+        <activity
             android:name=".Connect"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +29,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -28,7 +28,6 @@ public class Connect extends AppCompatActivity {
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -58,6 +57,14 @@ public class Connect extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 signIn();
+            }
+        });
+
+        findViewById(R.id.emailSignIn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Connect.this,EmailLogin.class);
+                startActivity(intent);
             }
         });
     }
