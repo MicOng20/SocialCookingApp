@@ -35,11 +35,11 @@ public class Connect extends AppCompatActivity {
         super.onStart();
 
 
-        FirebaseUser user = mAuth.getCurrentUser();
+        /*FirebaseUser user = mAuth.getCurrentUser();
         if(user!=null){
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     @Override

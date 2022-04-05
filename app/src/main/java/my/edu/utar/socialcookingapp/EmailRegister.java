@@ -51,7 +51,7 @@ public class EmailRegister extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fullname = mFullName.getText().toString();
+                String username = mFullName.getText().toString();
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String confirm = mConfirmPassword.getText().toString();
@@ -61,7 +61,7 @@ public class EmailRegister extends AppCompatActivity {
                 //    finish();
                 //}
 
-                if(TextUtils.isEmpty(fullname)){
+                if(TextUtils.isEmpty(username)){
                     mFullName.setError("Username is Required.");
                     return;
                 }
@@ -92,8 +92,8 @@ public class EmailRegister extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             //send verification link
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            FirebaseUser fUser = fAuth.getCurrentUser();
+                            fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(EmailRegister.this, "Verification Email has been Sent", Toast.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class EmailRegister extends AppCompatActivity {
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("fName",fullname);
+                            user.put("fName",username);
                             user.put("email",email);
                             documentReference.set(user).addOnSuccessListener((OnSuccessListener) (aVoid) -> {
                                 Log.d("TAG", "onSuccess: user Profile is created for " + userID);
