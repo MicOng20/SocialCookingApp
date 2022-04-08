@@ -70,22 +70,22 @@
             android:layout_height="55dp"
             android:layout_marginStart="84dp"
             android:background="@drawable/button"
+            android:drawableLeft="@drawable/com_facebook_favicon_blue"
             android:text="Connect with Facebook"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.735"
-            android:layout_marginLeft="84dp" />
+            app:layout_constraintVertical_bias="0.735" />
 
         <Button
             android:id="@+id/googleSignIn"
             android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
             android:background="@drawable/button"
+            android:drawableLeft="@drawable/googleg_standard_color_18"
             android:text="Connect with Google"
             android:textColor="@color/black"
             android:textStyle="bold"
