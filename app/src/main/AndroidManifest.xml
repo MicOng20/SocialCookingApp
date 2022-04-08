@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
         <activity
+            android:name=".FailActivity"
+            android:exported="false" />
+        <activity
             android:name=".FacebookAuth"
             android:exported="false" />
         <activity

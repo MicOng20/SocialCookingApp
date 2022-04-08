@@ -117,6 +117,8 @@ public class Connect extends AppCompatActivity {
                 // Google Sign In failed, update UI appropriately
                 // ...
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Connect.this, FailActivity.class);
+                startActivity(i);
             }
         }
     }
