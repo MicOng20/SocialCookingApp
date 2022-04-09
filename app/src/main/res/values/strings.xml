@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SocialCookingApp</string>
+    <string name="project_name">DishCovery</string>
     <string name="facebook_app_id">858151778915264</string>
     <string name="fb_login_protocol_scheme">fb858151778915264</string>
     <string name="facebook_client_token">0096cc0450c15df3e95d6e8a75dd2d05</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
