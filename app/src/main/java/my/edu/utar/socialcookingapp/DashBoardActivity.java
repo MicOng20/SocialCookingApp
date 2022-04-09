@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,11 @@ public class DashBoardActivity extends AppCompatActivity {
         NavigationBarView navigationView = findViewById(R.id.navigation);
         navigationView.setOnItemSelectedListener(selectedListener);
         // NavigationBarView.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener)
+
+        //Hide top action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         //home fragment transaction - default on start
         actionBar.setTitle("Home"); //change actionbar title
