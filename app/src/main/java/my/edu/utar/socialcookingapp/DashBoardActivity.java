@@ -74,14 +74,21 @@ public class DashBoardActivity extends AppCompatActivity {
                             ft2.replace(R.id.content1, fragment2, "");
                             ft2.commit();
                             return true;
+                        case R.id.nav_post:
+                            actionBar.setTitle("Post?"); //change actionbar title
+                            PostLayoutFragment fragment3 = new PostLayoutFragment();
+                            FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
+                            ft3.replace(R.id.content1, fragment3, "");
+                            ft3.commit();
+                            return true;
                         case R.id.nav_profile:
                             //profile fragment transaction
                             //home fragment transaction
                             actionBar.setTitle("Profile"); //change actionbar title
-                            ProfileFragment fragment3 = new ProfileFragment();
-                            FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
-                            ft3.replace(R.id.content1, fragment3, "");
-                            ft3.commit();
+                            ProfileFragment fragment4 = new ProfileFragment();
+                            FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
+                            ft4.replace(R.id.content1, fragment4, "");
+                            ft4.commit();
                             return true;
                     }
                     return false;
