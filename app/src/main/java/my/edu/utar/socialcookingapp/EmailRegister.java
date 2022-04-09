@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -104,6 +106,27 @@ public class EmailRegister extends AppCompatActivity {
                                     Log.d("TAG", "onFailure: Email not sent " + e.getMessage());
                                 }
                             });
+
+                            //FirebaseUser user = fAuth.getCurrentUser();
+
+                            //get user email and uid from auth
+                            String email1 = fUser.getEmail();
+                            String uid1 = fUser.getUid();
+
+                            HashMap<Object, String> hashMap = new HashMap<>();
+                            //put info to hashmap
+                            hashMap.put("email", email1);
+                            hashMap.put("uid", uid1);
+                            hashMap.put("name", "");
+                            hashMap.put("phone", "");
+                            hashMap.put("image", "");
+
+                            //firebase database instance
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            //path to store user data named "Users"
+                            DatabaseReference reference = database.getReference("Users");
+                            //put data within hashmap in database
+                            reference.child(uid1).setValue(hashMap);
 
                             Toast.makeText(EmailRegister.this, "User Created.", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
