@@ -3,13 +3,20 @@ package my.edu.utar.socialcookingapp;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -33,11 +40,48 @@ public class PostLayoutFragment extends Fragment {
     private List<String> followingList;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_post_layout, container, false);
-        /*View view = inflater.inflate(R.layout.fragment_post_layout, container, false);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-        recyclerView = view.findViewById(R.id.rv_post);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_post_layout, container, false);
+
+        final Button btnPopup = view.findViewById(R.id.btnPopup);
+        final Button btnMessenger = view.findViewById(R.id.btnMessenger);
+
+        btnPopup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(getActivity().getApplicationContext(),view);
+                popupMenu.inflate(R.menu.popup_menu);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()){
+                            case R.id.popup_post:
+                                Toast.makeText(getContext(), "Post", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.popup_story:
+                                Toast.makeText(getContext(), "Story", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return true;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
+
+        btnMessenger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Message", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        /*recyclerView = view.findViewById(R.id.rv_post);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);
@@ -50,7 +94,9 @@ public class PostLayoutFragment extends Fragment {
         checkFollowing();
         
         return view;*/
+        return view;
     }
+
 
     /*private void checkFollowing() {
         followingList = new ArrayList<>();
