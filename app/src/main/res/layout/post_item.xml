@@ -97,11 +97,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="description"
+            android:text="caption"
             android:textColor="@color/black" />
 
         <TextView

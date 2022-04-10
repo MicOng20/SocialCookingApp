@@ -50,11 +50,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
         Glide.with(mContext).load(post.getPostImage()).into(holder.post_image);
 
-        if (post.getDescription().equals("")){
-            holder.description.setVisibility(View.GONE);
+        if (post.getCaption().equals("")){
+            holder.caption.setVisibility(View.GONE);
         } else{
-            holder.description.setVisibility(View.VISIBLE);
-            holder.description.setText(post.getDescription());
+            holder.caption.setVisibility(View.VISIBLE);
+            holder.caption.setText(post.getCaption());
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
@@ -67,7 +67,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public ImageView image_profile, post_image, like, comment, save;
-        public TextView username, likes, publisher, description, comments;
+        public TextView username, likes, publisher, caption, comments;
 
         public ViewHolder (@NonNull View itemview){
             super(itemview);
@@ -80,7 +80,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             username = itemView.findViewById(R.id.username);
             likes = itemView.findViewById(R.id.likes_post);
             publisher = itemView.findViewById(R.id.publisher);
-            description = itemView.findViewById(R.id.description);
+            caption = itemView.findViewById(R.id.caption);
             comments = itemView.findViewById(R.id.comments_post);
 
         }

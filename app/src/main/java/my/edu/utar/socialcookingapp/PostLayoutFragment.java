@@ -1,7 +1,9 @@
 package my.edu.utar.socialcookingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -36,7 +38,7 @@ public class PostLayoutFragment extends Fragment {
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
     private List<PostTable> postLists;
-
+    ActivityResultLauncher<String> mGetContent;
     private List<String> followingList;
 
     @Override
@@ -60,11 +62,16 @@ public class PostLayoutFragment extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()){
-                            case R.id.popup_post:
-                                Toast.makeText(getContext(), "Post", Toast.LENGTH_SHORT).show();
+                            case R.id.popup_post:{
+                                Intent i = new Intent(getActivity(), PostActivity.class);
+                                startActivity(i);
                                 break;
+                            }
                             case R.id.popup_story:
                                 Toast.makeText(getContext(), "Story", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.popup_recipe:
+                                Toast.makeText(getContext(), "Recipe", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                         return true;

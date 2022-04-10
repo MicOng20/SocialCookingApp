@@ -3,13 +3,13 @@ package my.edu.utar.socialcookingapp.Model;
 public class PostTable {
     private String postID;
     private String postImage;
-    private String description;
+    private String caption;
     private String publisher;
 
-    public PostTable(String postID, String postImage, String description, String publisher) {
+    public PostTable(String postID, String postImage, String caption, String publisher) {
         this.postID = postID;
         this.postImage = postImage;
-        this.description = description;
+        this.caption = caption;
         this.publisher = publisher;
     }
 
@@ -32,12 +32,12 @@ public class PostTable {
         this.postImage = postImage;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCaption() {
+        return caption;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
 
     public String getPublisher() {

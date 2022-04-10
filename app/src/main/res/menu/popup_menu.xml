@@ -4,4 +4,6 @@
         android:title="Post"/>
     <item android:id="@+id/popup_story"
         android:title="Story"/>
+    <item android:id="@+id/popup_recipe"
+    android:title="Recipe"/>
 </menu>
