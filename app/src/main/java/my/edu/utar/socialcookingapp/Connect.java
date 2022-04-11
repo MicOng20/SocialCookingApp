@@ -1,8 +1,10 @@
 package my.edu.utar.socialcookingapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -117,8 +119,6 @@ public class Connect extends AppCompatActivity {
                 // Google Sign In failed, update UI appropriately
                 // ...
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Connect.this, FailActivity.class);
-                startActivity(i);
             }
         }
     }
@@ -141,13 +141,19 @@ public class Connect extends AppCompatActivity {
 
                         } else {
                             Toast.makeText(Connect.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
-
-
                         }
-
-
                         // ...
                     }
                 });
     }
+
+    @Override
+    public void onBackPressed()
+    {
+
+        //quit app
+        finish();
+        System.exit(0);
+    }
+
 }
