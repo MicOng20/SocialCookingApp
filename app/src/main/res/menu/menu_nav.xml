@@ -8,7 +8,7 @@
         android:title="Search"
         android:icon="@drawable/ic_search_black"/>
     <item android:id="@+id/nav_post"
-        android:title="Post?"
+        android:title="Post"
         android:icon="@drawable/ic_post"/>
     <item android:id="@+id/nav_profile"
         android:title="Profile"
