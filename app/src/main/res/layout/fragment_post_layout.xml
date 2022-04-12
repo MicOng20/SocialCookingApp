@@ -31,26 +31,41 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:id="@+id/search_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="110dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_search" />
+
                 <Button
                     android:id="@+id/btnPopup"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="60dp"
-                    android:background="@drawable/ic_add"/>
+                    android:background="@drawable/ic_add" />
 
                 <Button
                     android:id="@+id/btnMessenger"
                     android:layout_width="30dp"
                     android:layout_height="37dp"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/ic_messenger_icon" />
+
+
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_post"

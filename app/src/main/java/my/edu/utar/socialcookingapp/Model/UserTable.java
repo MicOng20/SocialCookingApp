@@ -1,49 +1,59 @@
 package my.edu.utar.socialcookingapp.Model;
 
 public class UserTable {
-    private String id;
-    private String username;
-    private String bio;
-    private String profileImageURL;
+    private String uid;
+    private String name;
+    private String email;
+    private String phone;
+    private String image;
 
-    public UserTable(String id, String username, String bio, String profileImageURL) {
-        this.id = id;
-        this.username = username;
-        this.bio = bio;
-        this.profileImageURL = profileImageURL;
+    public UserTable(String uid, String name, String email, String phone, String image) {
+        this.uid = uid;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.image = image;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public UserTable(){}
 
-    public String getId() {
-        return id;
+    public String getUid() {
+        return uid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBio() {
-        return bio;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getProfileImageURL() {
-        return profileImageURL;
+    public String getImage() {
+        return image;
     }
 
-    public void setProfileImageURL(String profileImageURL) {
-        this.profileImageURL = profileImageURL;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

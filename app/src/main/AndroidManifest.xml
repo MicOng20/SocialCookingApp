@@ -14,6 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
+
+        <activity
+            android:name=".CommentActivity"
+            android:exported="false" />
         <activity
             android:name=".ImageCropperActivity"
             android:exported="false" />

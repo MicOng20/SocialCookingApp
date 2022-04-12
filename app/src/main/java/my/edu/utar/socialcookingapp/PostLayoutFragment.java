@@ -7,16 +7,17 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -32,7 +33,6 @@ import java.util.List;
 
 import my.edu.utar.socialcookingapp.Adapter.PostAdapter;
 import my.edu.utar.socialcookingapp.Model.PostTable;
-import my.edu.utar.socialcookingapp.R;
 
 public class PostLayoutFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -40,6 +40,7 @@ public class PostLayoutFragment extends Fragment {
     private List<PostTable> postLists;
     ActivityResultLauncher<String> mGetContent;
     private List<String> followingList;
+    private ImageView search_button;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class PostLayoutFragment extends Fragment {
 
         final Button btnPopup = view.findViewById(R.id.btnPopup);
         final Button btnMessenger = view.findViewById(R.id.btnMessenger);
+        search_button = view.findViewById(R.id.search_button);
 
         btnPopup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +90,21 @@ public class PostLayoutFragment extends Fragment {
             }
         });
 
-        /*recyclerView = view.findViewById(R.id.rv_post);
+        search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Intent i = new Intent(getActivity(), SearchUserActivity.class);
+                startActivity(i);*/
+                Fragment fragment = new SearchUserFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content1, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        recyclerView = view.findViewById(R.id.rv_post);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);
@@ -99,13 +115,12 @@ public class PostLayoutFragment extends Fragment {
         recyclerView.setAdapter(postAdapter);
 
         checkFollowing();
-        
-        return view;*/
+
         return view;
     }
 
 
-    /*private void checkFollowing() {
+    private void checkFollowing() {
         followingList = new ArrayList<>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Follow")
@@ -151,5 +166,5 @@ public class PostLayoutFragment extends Fragment {
 
             }
         });
-    }*/
+    }
 }

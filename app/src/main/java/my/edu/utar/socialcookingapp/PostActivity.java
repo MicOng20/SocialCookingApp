@@ -64,6 +64,8 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
+        getSupportActionBar().hide();
+
         mGetContent.launch("image/*");
         close = findViewById(R.id.close);
         tick = findViewById(R.id.tick);
@@ -148,7 +150,7 @@ public class PostActivity extends AppCompatActivity {
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("postID", postID);
                         hashMap.put("postImage", myUrl);
-                        hashMap.put("description", caption.getText().toString());
+                        hashMap.put("caption", caption.getText().toString());
                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                         reference.child(postID).setValue(hashMap);
@@ -160,6 +162,7 @@ public class PostActivity extends AppCompatActivity {
                         ft.replace(R.id.content1, fragment, "");
                         ft.commit();
 
+                        Toast.makeText(PostActivity.this, "Posted", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         Toast.makeText(PostActivity.this, "Failed", Toast.LENGTH_SHORT).show();
