@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
-
+        <activity
+            android:name=".SearchMenu"
+            android:exported="false" />
         <activity
             android:name=".CommentActivity"
             android:exported="false" />
