@@ -24,8 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"
-                android:scaleType="centerCrop"
-                android:src="@drawable/slowcooker_lemon_garlic_chicken" />
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,7 +34,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1.3"
                     android:orientation="vertical"
                     android:padding="10dp">
@@ -47,6 +46,7 @@
                         android:maxLines="1"
                         android:text="Title"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/tvDescription"
                         android:layout_width="match_parent"
@@ -54,6 +54,70 @@
                         android:maxLines="1"
                         android:text="Description"
                         android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient1"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient2"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient3"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient1Amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient1 amount"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient2Amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient2 amount"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvIngredient3Amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ingredient3 amount"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tvRecipeStep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Step"
+                        android:textSize="18sp"
+                        android:visibility="invisible" />
+
                 </LinearLayout>
 
             </LinearLayout>
