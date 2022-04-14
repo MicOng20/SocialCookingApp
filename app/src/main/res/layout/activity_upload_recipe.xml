@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UploadRecipe">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_foodImage"
+            android:src="@drawable/bacon_egg_ramen"/>
+
+        <EditText
+            android:id="@+id/txt_recipeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Recipe Name"
+            android:minHeight="48dp"
+            android:textSize="19sp" />
+
+        <EditText
+            android:id="@+id/txt_recipeDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Description"
+            android:minHeight="48dp"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/txt_recipeIngredient"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/txt_recipeIngredientAmount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="2dp"
+                android:layout_toEndOf="@+id/txt_recipeIngredient"
+                android:hint="Amount"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/txt_recipeIngredient2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/txt_recipeIngredient2Amount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="2dp"
+                android:layout_toEndOf="@+id/txt_recipeIngredient2"
+                android:gravity="center"
+                android:hint="Amount"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/txt_recipeIngredient3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/txt_recipeIngredient3Amount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="2dp"
+                android:layout_toEndOf="@+id/txt_recipeIngredient3"
+                android:gravity="center"
+                android:hint="Amount"
+                android:minHeight="48dp"
+                android:textSize="19sp" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/txt_recipeStep"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:hint="Method"
+            android:minHeight="48dp"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/selectImage_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Select Image"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:onClick="btnSelectImage"/>
+        <Button
+            android:id="@+id/uploadRecipe_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Upload"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
         <activity
-            android:name=".SearchMenu"
+            android:name=".UploadRecipe"
             android:exported="false" />
         <activity
             android:name=".CommentActivity"
