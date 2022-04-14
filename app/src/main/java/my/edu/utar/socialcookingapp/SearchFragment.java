@@ -3,62 +3,65 @@ package my.edu.utar.socialcookingapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+import my.edu.utar.socialcookingapp.Adapter.FoodAdapter;
+import my.edu.utar.socialcookingapp.Model.FoodData;
+
 public class SearchFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SearchFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SearchFragment newInstance(String param1, String param2) {
-        SearchFragment fragment = new SearchFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private RecyclerView mRecycleView;
+    private List<FoodData> myFoodList;
+    private FoodData mFoodData;
+    private FoodAdapter foodAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+                             Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.fragment_search,container,false);
+        mRecycleView = view.findViewById(R.id.recycleView);
+        mRecycleView.setHasFixedSize(true);
+        mRecycleView.setLayoutManager(new GridLayoutManager(getActivity(),1));
+
+        myFoodList = new ArrayList<>();
+        foodAdapter = new FoodAdapter(getContext(),myFoodList);
+        mRecycleView.setAdapter(foodAdapter);
+
+        mFoodData = new FoodData("Slow Cooker Lemon Garlic Chicken",
+                "Chicken With Lemon Garlic Flavour",
+                R.drawable.slowcooker_lemon_garlic_chicken);
+        myFoodList.add(mFoodData);
+
+        mFoodData = new FoodData("Semisweet Chocolate Mousse",
+                "Fresh Dessert with Chocolate",
+                R.drawable.semisweet_chocolate_mousse);
+        myFoodList.add(mFoodData);
+
+        mFoodData = new FoodData("Meal Prep Pesto Chicken Veggie",
+                "A Dish Suit Meat with Veggie",
+                R.drawable.mealprep_pesto_chicken_veggies);
+        myFoodList.add(mFoodData);
+
+        mFoodData = new FoodData("Peanut Butter Cup Trifle",
+                "Sweet Dessert for Everyone",
+                R.drawable.peanutbutter_cup_trifle);
+        myFoodList.add(mFoodData);
+
+        mFoodData = new FoodData("Grandma Tomato Soup",
+                "Your Memory Flavour",
+                R.drawable.grandma_tomato_soup);
+        myFoodList.add(mFoodData);
+
+        return view;
     }
 }
