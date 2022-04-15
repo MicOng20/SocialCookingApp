@@ -64,20 +64,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.541" />
 
-        <Button
-            android:id="@+id/facebookSignIn"
-            android:layout_width="290dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="84dp"
-            android:background="@drawable/button"
-            android:drawableLeft="@drawable/com_facebook_favicon_blue"
-            android:text="Connect with Facebook"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.735" />
 
         <Button
             android:id="@+id/googleSignIn"
@@ -92,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836">
+            app:layout_constraintVertical_bias="0.762">
 
         </Button>
 
@@ -109,8 +95,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.943"
-            android:layout_marginLeft="84dp" />
+            app:layout_constraintVertical_bias="0.865" />
 
         <ImageView
             android:id="@+id/imageView2"
