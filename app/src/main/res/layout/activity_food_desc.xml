@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FoodDesc">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/fd_ivImage"
+            android:src="@drawable/bacon_egg_ramen"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Food Name"
+            android:id="@+id/fd_tvTitle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="Description"
+            android:id="@+id/fd_tvDesc"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 1" />
+            <TextView
+                android:id="@+id/fd_tvIngredient1"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount1"
+                android:padding="20dp"
+                android:text="Ingredient 1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 2" />
+
+            <TextView
+                android:id="@+id/fd_tvIngredient2"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount2"
+                android:padding="20dp"
+                android:text="Ingredient 2" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 3" />
+
+            <TextView
+                android:id="@+id/fd_tvIngredient3"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount3"
+                android:padding="20dp"
+                android:text="Ingredient 3" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 4" />
+            <TextView
+                android:id="@+id/fd_tvIngredient4"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount4"
+                android:padding="20dp"
+                android:text="Ingredient 4" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 5" />
+            <TextView
+                android:id="@+id/fd_tvIngredient5"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount5"
+                android:padding="20dp"
+                android:text="Ingredient 5" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 6" />
+            <TextView
+                android:id="@+id/fd_tvIngredient6"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount6"
+                android:padding="20dp"
+                android:text="Ingredient 6" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fd_tvAmount7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Amount 7" />
+            <TextView
+                android:id="@+id/fd_tvIngredient7"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@+id/fd_tvAmount7"
+                android:padding="20dp"
+                android:text="Ingredient 7" />
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/fd_tvMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="20dp"
+            android:text="Method"/>
+        
+    </LinearLayout>
+
+
+</ScrollView>

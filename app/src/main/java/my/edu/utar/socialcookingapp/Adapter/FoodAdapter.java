@@ -1,6 +1,7 @@
 package my.edu.utar.socialcookingapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import my.edu.utar.socialcookingapp.FoodDesc;
 import my.edu.utar.socialcookingapp.Model.FoodData;
 import my.edu.utar.socialcookingapp.R;
 
@@ -45,6 +47,32 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
         //foodViewHolder.imageView.setImageResource(myFoodList.get(i).getImage());
         foodViewHolder.mTitle.setText(myFoodList.get(i).getFoodName());
         foodViewHolder.mDesc.setText(myFoodList.get(i).getFoodDesc());
+
+        foodViewHolder.mCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, FoodDesc.class);
+                intent.putExtra("Image",myFoodList.get(foodViewHolder.getAdapterPosition()).getImage());
+                intent.putExtra("FoodName",myFoodList.get(foodViewHolder.getAdapterPosition()).getFoodName());
+                intent.putExtra("Description",myFoodList.get(foodViewHolder.getAdapterPosition()).getFoodDesc());
+                intent.putExtra("Ingredient1",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient1());
+                intent.putExtra("Amount1",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount1());
+                intent.putExtra("Ingredient2",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient2());
+                intent.putExtra("Amount2",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount2());
+                intent.putExtra("Ingredient3",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient3());
+                intent.putExtra("Amount3",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount3());
+                intent.putExtra("Ingredient4",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient4());
+                intent.putExtra("Amount4",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount4());
+                intent.putExtra("Ingredient5",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient5());
+                intent.putExtra("Amount5",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount5());
+                intent.putExtra("Ingredient6",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient6());
+                intent.putExtra("Amount6",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount6());
+                intent.putExtra("Ingredient7",myFoodList.get(foodViewHolder.getAdapterPosition()).getIngredient7());
+                intent.putExtra("Amount7",myFoodList.get(foodViewHolder.getAdapterPosition()).getAmount7());
+                intent.putExtra("Method",myFoodList.get(foodViewHolder.getAdapterPosition()).getFoodMethod());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

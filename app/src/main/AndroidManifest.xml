@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialCookingApp">
         <activity
+            android:name=".FoodDesc"
+            android:exported="false" />
+        <activity
             android:name=".UploadRecipe"
             android:exported="false" />
         <activity
