@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,7 +49,6 @@ public class SearchUserFragment extends Fragment {
         recyclerView.setAdapter(userAdapter);
 
         readUsers();
-
         search_bar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -98,10 +96,11 @@ public class SearchUserFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (search_bar.getText().toString().equals("")){
                     mUsers.clear();
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         UserTable user = dataSnapshot.getValue(UserTable.class);
                         mUsers.add(user);
                     }
+
                     userAdapter.notifyDataSetChanged();
                 }
             }

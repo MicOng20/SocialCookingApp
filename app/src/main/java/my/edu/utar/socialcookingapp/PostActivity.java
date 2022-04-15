@@ -10,6 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
@@ -157,15 +159,12 @@ public class PostActivity extends AppCompatActivity {
 
                         progressDialog.dismiss();
 
-                        PostLayoutFragment fragment = new PostLayoutFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.content1, fragment, "");
-                        ft.commit();
-
                         Toast.makeText(PostActivity.this, "Posted", Toast.LENGTH_SHORT).show();
                         finish();
+
                     } else {
                         Toast.makeText(PostActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {

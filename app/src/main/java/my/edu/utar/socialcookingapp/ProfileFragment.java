@@ -122,11 +122,11 @@ public class ProfileFragment extends Fragment {
                     phoneTv.setText(phone);
                     try {
                         //if image is received then set
-                        Picasso.get().load(image).into(avatarIv);
+                        //Picasso.get().load(image).into(avatarIv);
                     }
                     catch (Exception e){
                         //if there is any exception while getting image then set default
-                        Picasso.get().load(R.drawable.ic_add_image).into(avatarIv);
+                        //Picasso.get().load(R.drawable.ic_add_image).into(avatarIv);
                     }
                 }
             }

@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,6 +42,7 @@ public class PostLayoutFragment extends Fragment {
     ActivityResultLauncher<String> mGetContent;
     private List<String> followingList;
     private ImageView search_button;
+    private TextView noPost;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,8 +95,6 @@ public class PostLayoutFragment extends Fragment {
         search_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent i = new Intent(getActivity(), SearchUserActivity.class);
-                startActivity(i);*/
                 Fragment fragment = new SearchUserFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -113,6 +113,7 @@ public class PostLayoutFragment extends Fragment {
         postLists = new ArrayList<>();
         postAdapter = new PostAdapter(getContext(), postLists);
         recyclerView.setAdapter(postAdapter);
+        noPost = view.findViewById(R.id.noPost);
 
         checkFollowing();
 
@@ -153,7 +154,7 @@ public class PostLayoutFragment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     PostTable post = dataSnapshot.getValue(PostTable.class);
                     for (String id : followingList){
-                        if (post.getPublisher().equals(id)){
+                        if (post.getPublisher().equals(id) || post.getPublisher().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
                             postLists.add(post);
                         }
                     }

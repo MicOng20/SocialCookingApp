@@ -49,18 +49,8 @@ public class CommentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
-        getSupportActionBar().hide();
 
-        Toolbar toolbar = findViewById(R.id.toolbar_comment);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Comments");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         recyclerView = findViewById(R.id.rv_comment);
         recyclerView.setHasFixedSize(true);
@@ -132,8 +122,11 @@ public class CommentActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserTable user = snapshot.getValue(UserTable.class);
-                Glide.with(getApplicationContext()).load(user.getImage()).into(image_comment);
-
+                if(user.getImage().toString().equals("")){
+                    image_comment.setImageResource(R.drawable.ic_person_search);
+                } else{
+                    Glide.with(getApplicationContext()).load(user.getImage()).into(image_comment);
+                }
             }
 
             @Override

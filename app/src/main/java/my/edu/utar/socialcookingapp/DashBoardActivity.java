@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.SharedPreferences;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -41,6 +42,19 @@ public class DashBoardActivity extends AppCompatActivity {
         NavigationBarView navigationView = findViewById(R.id.navigation);
         navigationView.setOnItemSelectedListener(selectedListener);
         // NavigationBarView.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener)
+
+        /*Bundle intent = getIntent().getExtras();
+        if (intent != null){
+            String publisher = intent.getString("publisherid");
+
+            SharedPreferences.Editor editor = getSharedPreferences("SHARED_PREFERENCES", MODE_PRIVATE).edit();
+            editor.putString("profileid", publisher);
+            editor.apply();
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ProfileFragment()).commit();
+        } else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.content1, new HomeFragment()).commit();
+        }*/
 
         //Hide top action bar
         if (getSupportActionBar() != null) {
@@ -80,7 +94,7 @@ public class DashBoardActivity extends AppCompatActivity {
                             ft2.commit();
                             return true;
                         case R.id.nav_post:
-                            actionBar.setTitle("Post?"); //change actionbar title
+                            actionBar.setTitle("Post"); //change actionbar title
                             PostLayoutFragment fragment3 = new PostLayoutFragment();
                             FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
                             ft3.replace(R.id.content1, fragment3, "");

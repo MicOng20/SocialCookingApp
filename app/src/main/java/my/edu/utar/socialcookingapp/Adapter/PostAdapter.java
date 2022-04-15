@@ -2,13 +2,16 @@ package my.edu.utar.socialcookingapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -25,7 +28,10 @@ import java.util.List;
 import my.edu.utar.socialcookingapp.CommentActivity;
 import my.edu.utar.socialcookingapp.Model.PostTable;
 import my.edu.utar.socialcookingapp.Model.UserTable;
+import my.edu.utar.socialcookingapp.PostDetailFragment;
+import my.edu.utar.socialcookingapp.ProfileFragment;
 import my.edu.utar.socialcookingapp.R;
+import my.edu.utar.socialcookingapp.ShowUserFragment;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     public Context mContext;
@@ -48,7 +54,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        PostTable post = mPost.get(position);
+        final PostTable post = mPost.get(position);
 
         Glide.with(mContext).load(post.getPostImage()).into(holder.post_image);
 
@@ -63,6 +69,51 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         isLikes(post.getPostID(), holder.like);
         nrLikes(holder.likes, post.getPostID());
         getComments(post.getPostID(), holder.comments);
+        //isSaved(post.getPostID(), holder.save);
+
+/*        holder.image_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
+                editor.putString("profileid", post.getPublisher());
+                editor.apply();
+
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
+            }
+        });
+
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
+                editor.putString("profileid", post.getPublisher());
+                editor.apply();
+
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
+            }
+        });
+
+        holder.publisher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
+                editor.putString("profileid", post.getPublisher());
+                editor.apply();
+
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
+            }
+        });
+
+        holder.grid_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
+                editor.putString("postid", post.getPostID());
+                editor.apply();
+
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new PostDetailFragment()).commit();
+            }
+        });*/
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +128,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             }
         });
 
+        holder.save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.save.getTag().equals("save")){
+                    FirebaseDatabase.getInstance().getReference().child("Saves").child(firebaseUser.getUid())
+                            .child(post.getPostID()).setValue(true);
+                } else{
+                    FirebaseDatabase.getInstance().getReference().child("Saves").child(firebaseUser.getUid())
+                            .child(post.getPostID()).removeValue();
+                }
+            }
+        });
+
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +151,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             }
         });
 
-        holder.comment.setOnClickListener(new View.OnClickListener() {
+        holder.comments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, CommentActivity.class);
@@ -104,7 +168,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public ImageView image_profile, post_image, like, comment, save;
+        public ImageView image_profile, grid_image, like, comment, save, post_image;
         public TextView username, likes, publisher, caption, comments;
 
         public ViewHolder (@NonNull View itemview){
@@ -112,6 +176,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
             image_profile = itemView.findViewById(R.id.image_profile);
             post_image = itemView.findViewById(R.id.post_image);
+            grid_image = itemView.findViewById(R.id.grid_image);
             like = itemView.findViewById(R.id.like_post);
             comment = itemView.findViewById(R.id.comment);
             save = itemView.findViewById(R.id.save_post);
@@ -189,7 +254,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserTable user = snapshot.getValue(UserTable.class);
-                Glide.with(mContext).load(user.getImage()).into(image_profile);
+                if(user.getImage().toString().equals("")){
+                    image_profile.setImageResource(R.drawable.ic_person_search);
+                } else{
+                    Glide.with(mContext).load(user.getImage()).into(image_profile);
+                }
                 username.setText(user.getName());
                 publisher.setText(user.getName());
             }
@@ -200,4 +269,30 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             }
         });
     }
+
+    /*private void isSaved(final String postid, final ImageView imageView){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
+                .child("Saves")
+                .child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(postid).exists()){
+                    imageView.setImageResource(R.drawable.ic_save_item_fill);
+                    imageView.setTag("saved");
+                } else{
+                    imageView.setImageResource(R.drawable.ic_save_item);
+                    imageView.setTag("save");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }*/
 }

@@ -6,15 +6,15 @@
     tools:context=".PostLayoutFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/postbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/postbar"
         android:background="?android:attr/windowBackground">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
             android:background="?android:attr/windowBackground">
 
             <RelativeLayout
@@ -36,9 +36,8 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginRight="110dp"
-                    android:layout_centerHorizontal="true"
                     android:src="@drawable/ic_search" />
 
                 <Button
@@ -54,11 +53,10 @@
                     android:id="@+id/btnMessenger"
                     android:layout_width="30dp"
                     android:layout_height="37dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/ic_messenger_icon" />
-
 
 
             </RelativeLayout>
@@ -66,11 +64,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/postbar" />
+
+    <TextView
+        android:id="@+id/noPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/postbar"
+        android:gravity="center"
+        android:textColor="#4B000000" />
 
 </RelativeLayout>

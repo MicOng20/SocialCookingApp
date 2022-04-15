@@ -56,7 +56,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         final CommentTable comment = mComment.get(position);
 
         holder.comment.setText(comment.getComment());
-        getUserInfo(holder.iamge_comment, holder.username, comment.getPublisher());
+        getUserInfo(holder.image_comment, holder.username, comment.getPublisher());
 
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +75,13 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public ImageView iamge_comment;
+        public ImageView image_comment;
         public TextView username, comment;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
 
-            iamge_comment = itemView.findViewById(R.id.image_comment);
+            image_comment = itemView.findViewById(R.id.image_comment);
             username = itemView.findViewById(R.id.username);
             comment = itemView.findViewById(R.id.comment);
         }
@@ -93,7 +93,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserTable user = snapshot.getValue(UserTable.class);
-                Glide.with(mContext).load(user.getImage()).into(imageView);
+                if(user.getImage().toString().equals("")){
+                    imageView.setImageResource(R.drawable.ic_person_search);
+                } else{
+                    Glide.with(mContext).load(user.getImage()).into(imageView);
+                }
                 username.setText(user.getName());
             }
 

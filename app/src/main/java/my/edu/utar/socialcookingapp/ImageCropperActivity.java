@@ -23,7 +23,7 @@ public class ImageCropperActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_cropper);
-
+        getSupportActionBar().hide();
         readIntent();
 
         String destUri = new StringBuilder(UUID.randomUUID().toString()).append(".jpg").toString();

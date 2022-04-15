@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_comment"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/image_comment"/>
+        android:layout_gravity="center_vertical" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:orientation="vertical"
-        android:layout_toEndOf="@+id/image_comment">
+        android:paddingBottom="15dp"
+        android:layout_toEndOf="@+id/image_comment"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:id="@+id/username"/>
+            android:padding="10dp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLines="5"
-            android:id="@+id/comment"/>
+            android:padding="5dp"
+            android:maxLines="5" />
     </LinearLayout>
 
 </RelativeLayout>

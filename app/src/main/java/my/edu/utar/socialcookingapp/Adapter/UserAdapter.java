@@ -31,6 +31,7 @@ import my.edu.utar.socialcookingapp.Model.UserTable;
 import my.edu.utar.socialcookingapp.PostActivity;
 import my.edu.utar.socialcookingapp.ProfileFragment;
 import my.edu.utar.socialcookingapp.R;
+import my.edu.utar.socialcookingapp.ShowUserFragment;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private Context mContext;
@@ -57,6 +58,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         holder.username.setText(user.getName());
         holder.btn_follow_search.setVisibility(View.VISIBLE);
+
         if(user.getImage().toString().equals("")){
             holder.search_imgprofile.setImageResource(R.drawable.ic_person_search);
         } else{
@@ -77,9 +79,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 prefEditor.apply();
                 prefEditor.commit();
 
-//                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ProfileFragment()).commit();
-                //Intent i = new Intent(getActivity(), SearchProfileActivity.class);
-                //startActivity(i);
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
             }
         });
 
