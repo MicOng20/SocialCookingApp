@@ -23,7 +23,6 @@ public class SplashScreen extends AppCompatActivity {
                 Intent intent=new Intent(SplashScreen.this,Connect.class); //Original > Connect.class
                 startActivity(intent);
                 finish();
-
             }
         }, 3000);
     }

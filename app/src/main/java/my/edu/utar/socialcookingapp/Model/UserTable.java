@@ -7,12 +7,17 @@ public class UserTable {
     private String phone;
     private String image;
 
-    public UserTable(String uid, String name, String email, String phone, String image) {
+    private String cover;
+
+
+
+    public UserTable(String uid, String name, String email, String phone, String image, String cover) {
         this.uid = uid;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.image = image;
+        this.cover = cover;
     }
 
     public String getEmail() {
@@ -55,5 +60,13 @@ public class UserTable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 }

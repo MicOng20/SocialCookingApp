@@ -27,6 +27,7 @@ import com.google.firebase.firestore.auth.User;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import my.edu.utar.socialcookingapp.ChatActivity;
 import my.edu.utar.socialcookingapp.Model.UserTable;
 import my.edu.utar.socialcookingapp.PostActivity;
 import my.edu.utar.socialcookingapp.ProfileFragment;
@@ -36,12 +37,14 @@ import my.edu.utar.socialcookingapp.ShowUserFragment;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private Context mContext;
     private List<UserTable> mUsers;
+    private int num;
 
     private FirebaseUser firebaseUser;
 
-    public UserAdapter(Context mContext, List<UserTable> mUsers) {
+    public UserAdapter(Context mContext, List<UserTable> mUsers, int num) {
         this.mContext = mContext;
         this.mUsers = mUsers;
+        this.num = num;
     }
 
     @NonNull
@@ -83,19 +86,28 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             }
         });
 
+
         holder.btn_follow_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.btn_follow_search.getText().toString().equals("Follow")){
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
-                            .child("following").child(user.getUid()).setValue(true);
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getUid())
-                            .child("followers").child(firebaseUser.getUid()).setValue(true);
-                } else{
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
-                            .child("following").child(user.getUid()).removeValue();
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getUid())
-                            .child("followers").child(firebaseUser.getUid()).removeValue();
+                if (num == 0){
+                    if (holder.btn_follow_search.getText().toString().equals("Follow")){
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
+                                .child("following").child(user.getUid()).setValue(true);
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getUid())
+                                .child("followers").child(firebaseUser.getUid()).setValue(true);
+                    } else{
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
+                                .child("following").child(user.getUid()).removeValue();
+                        FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getUid())
+                                .child("followers").child(firebaseUser.getUid()).removeValue();
+                    }
+                }
+                else if(num == 1){
+                    Intent intent = new Intent(mContext, ChatActivity.class);
+                    intent.putExtra("hisUiD", user.getUid());
+                    mContext.startActivity(intent);
+                    //Toast.makeText(mContext, "Here am I", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -116,7 +128,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             username = itemView.findViewById(R.id.username_search);
             search_imgprofile = itemView.findViewById(R.id.search_imgprofile);
             btn_follow_search = itemView.findViewById(R.id.btn_follow_search);
-
         }
     }
 
@@ -126,11 +137,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child(userid).exists()){
-                    btn.setText("Following");
+                if(num == 0){
+                    if (snapshot.child(userid).exists()){
+                        btn.setText("Following");
+                    }
+                    else{
+                        btn.setText("Follow");
+                    }
                 }
-                else{
-                    btn.setText("Follow");
+                else if(num == 1){
+                    btn.setText("Chat");
                 }
             }
 
