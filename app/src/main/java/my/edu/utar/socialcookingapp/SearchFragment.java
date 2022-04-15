@@ -1,64 +1,123 @@
 package my.edu.utar.socialcookingapp;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import my.edu.utar.socialcookingapp.Adapter.FoodAdapter;
+import my.edu.utar.socialcookingapp.Model.FoodData;
+
 public class SearchFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView mRecycleView2;
+    private List<FoodData> myFoodList2;
+    private FoodData mFoodData2;
+    private FoodAdapter foodAdapter2;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private DatabaseReference databaseReference2;
+    private ValueEventListener eventListener2;
+    ProgressDialog progressDialog2;
 
-    public SearchFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SearchFragment newInstance(String param1, String param2) {
-        SearchFragment fragment = new SearchFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    EditText txt_Search2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+                             Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.fragment_search,container,false);
+
+        mRecycleView2 = view.findViewById(R.id.fs_recycleView);
+        mRecycleView2.setHasFixedSize(true);
+        mRecycleView2.setLayoutManager(new GridLayoutManager(getActivity(),1));
+
+        txt_Search2 = view.findViewById(R.id.fs_search);
+
+        progressDialog2 = new ProgressDialog(getActivity());
+        progressDialog2.setMessage("Loading Items...");
+
+        myFoodList2 = new ArrayList<>();
+
+        foodAdapter2 = new FoodAdapter(getContext(),myFoodList2);
+        mRecycleView2.setAdapter(foodAdapter2);
+
+        progressDialog2 = new ProgressDialog(getActivity());
+        progressDialog2.setMessage("Loading Items...");
+
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("Recipe");
+
+        progressDialog2.show();
+        eventListener2 = databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                myFoodList2.clear();
+                for(DataSnapshot itemSnapshot: snapshot.getChildren())
+                {
+                    FoodData foodData = itemSnapshot.getValue(FoodData.class);
+                    myFoodList2.add(foodData);
+                }
+                foodAdapter2.notifyDataSetChanged();
+                progressDialog2.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                progressDialog2.dismiss();
+            }
+        });
+
+        txt_Search2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                filter(editable.toString());
+
+            }
+        });
+
+        return view;
     }
+
+    private void filter (String text){
+        ArrayList<FoodData> filterList = new ArrayList<>();
+
+        for(FoodData item:myFoodList2){
+            if(item.getFoodName().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(item);
+            }
+        }
+        foodAdapter2.filteredList(filterList);
+    }
+
 }

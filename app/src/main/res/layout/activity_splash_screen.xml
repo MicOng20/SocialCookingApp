@@ -8,7 +8,7 @@
     tools:context=".SplashScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="458dp"
+        android:layout_width="match_parent"
         android:layout_height="422dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,6 @@
             android:layout_height="271dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.656"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.503"

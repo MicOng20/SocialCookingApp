@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         //tv.setText("I am superman");
         Intent i = new Intent(this, DashBoardActivity.class);
         startActivity(i);
+
+        TextView tv;
 
     }
 }

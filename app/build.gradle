@@ -41,9 +41,11 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.1.0')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-storage:20.0.1'//
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'     //Glide v4 uses this new annotation processor
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'     //Glide v4 uses this new annotation processor
     implementation 'com.github.krokyze:ucropnedit:2.2.6-2';
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.activity:activity-ktx:1.2.0'
