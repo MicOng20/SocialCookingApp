@@ -54,7 +54,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        final PostTable post = mPost.get(position);
+        PostTable post = mPost.get(position);
 
         Glide.with(mContext).load(post.getPostImage()).into(holder.post_image);
 
@@ -185,7 +185,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             publisher = itemView.findViewById(R.id.publisher);
             caption = itemView.findViewById(R.id.caption);
             comments = itemView.findViewById(R.id.comments_post);
-
         }
     }
 

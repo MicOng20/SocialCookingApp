@@ -75,7 +75,8 @@ public class PostLayoutFragment extends Fragment {
                                 Toast.makeText(getContext(), "Story", Toast.LENGTH_SHORT).show();
                                 break;
                             case R.id.popup_recipe:
-                                Toast.makeText(getContext(), "Recipe", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(),UploadRecipe.class);
+                                startActivity(intent);
                                 break;
                         }
                         return true;
@@ -154,10 +155,16 @@ public class PostLayoutFragment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     PostTable post = dataSnapshot.getValue(PostTable.class);
                     for (String id : followingList){
-                        if (post.getPublisher().equals(id) || post.getPublisher().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                        if (post.getPublisher().equals(id)){
                             postLists.add(post);
+                        } else if (post.getPublisher().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                            postLists.add(post);
+                            break;
                         }
                     }
+                }
+                if(postLists.isEmpty()){
+                    noPost.setText("\n\n\nThere is no post on your feeds yet.");
                 }
                 postAdapter.notifyDataSetChanged();
             }
