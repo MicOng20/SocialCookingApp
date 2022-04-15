@@ -30,6 +30,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -84,7 +85,7 @@ public class ProfileFragment extends Fragment {
     //view from xml
     ImageView avatarIv, coverIv;
     TextView nameTv, emailTv, phoneTv, fProfileTv;
-    FloatingActionButton fab;
+    Button edit, logout;
 
     //To solve the old style of start actvity
     //ActivityResultLauncher<Intent> activityResultLauncher;
@@ -166,7 +167,8 @@ public class ProfileFragment extends Fragment {
         nameTv = view.findViewById(R.id.nameTv);
         emailTv = view.findViewById(R.id.emailTv);
         phoneTv = view.findViewById(R.id.phoneTv);
-        fab = view.findViewById(R.id.fab);
+        edit = view.findViewById(R.id.fab);
+        logout = view.findViewById(R.id.logoutBtn);
 
         //init progress dialog
         pd = new ProgressDialog(getActivity());
@@ -219,12 +221,23 @@ public class ProfileFragment extends Fragment {
         });
 
         //fab button click
-        fab.setOnClickListener(new View.OnClickListener() {
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showEditProfileDialog();
             }
         });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent =new Intent(getActivity(), Connect.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
         return view;
     }
 

@@ -11,4 +11,6 @@
     <color name="cherry_red">#D2042D</color>
     <color name="light_red">#ffcccb</color>
     <color name="red_25">#ff726f</color>
+    <color name="grey">#808080</color>
+
 </resources>
