@@ -11,6 +11,7 @@
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_comment.xml" value="0.217" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_home.xml" value="0.217" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.136" />
+        <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_liked.xml" value="0.2205" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_messenger_icon.xml" value="0.124" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_person_search.xml" value="0.136" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/drawable/ic_post.xml" value="0.217" />
@@ -29,16 +30,18 @@
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/activity_search_user.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/activity_story.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/add_story_item.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/comment_item.xml" value="0.2" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_home.xml" value="0.23731884057971014" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_post_detail.xml" value="0.2" />
-        <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_post_layout.xml" value="0.264" />
+        <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_post_layout.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_profile.xml" value="0.23731884057971014" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_search.xml" value="0.23731884057971014" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_search_user.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/fragment_show_user.xml" value="0.1654501216545012" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/grid_post_item.xml" value="0.2" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/post_item.xml" value="0.4" />
+        <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/story_item.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/layout/user_item.xml" value="0.264" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/Desktop/SocialCookingApp/app/src/main/res/menu/menu_nav.xml" value="0.25416666666666665" />
@@ -57,25 +60,6 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/menu_nav.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/popup_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_connect.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_email_login.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_food_desc.xml" value="0.264" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_post.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_search_menu.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_upload_recipe.xml" value="0.264" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_post_layout.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_search.xml" value="0.264" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_search_user.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/post_item.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/recycle_row_food.xml" value="0.2" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/user_item.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/menu/menu_main.xml" value="0.25" />
-        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/menu/popup_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

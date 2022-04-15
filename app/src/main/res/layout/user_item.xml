@@ -19,11 +19,10 @@
         android:layout_centerVertical="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:id="@+id/username_search"
             android:text="Username"
-            android:maxLines="1"
             android:paddingLeft="15dp"
             android:textStyle="bold"
             android:textColor="@color/black"/>

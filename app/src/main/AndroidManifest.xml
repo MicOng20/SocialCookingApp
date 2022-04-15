@@ -34,7 +34,6 @@
         <activity
             android:name=".DashBoardActivity"
             android:exported="false" />
-
         <activity
             android:name=".EmailRegister"
             android:exported="false" />
