@@ -43,19 +43,6 @@ public class DashBoardActivity extends AppCompatActivity {
         navigationView.setOnItemSelectedListener(selectedListener);
         // NavigationBarView.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener)
 
-        /*Bundle intent = getIntent().getExtras();
-        if (intent != null){
-            String publisher = intent.getString("publisherid");
-
-            SharedPreferences.Editor editor = getSharedPreferences("SHARED_PREFERENCES", MODE_PRIVATE).edit();
-            editor.putString("profileid", publisher);
-            editor.apply();
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ProfileFragment()).commit();
-        } else{
-            getSupportFragmentManager().beginTransaction().replace(R.id.content1, new HomeFragment()).commit();
-        }*/
-
         //Hide top action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();

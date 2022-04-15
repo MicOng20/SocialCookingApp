@@ -1,6 +1,8 @@
 package my.edu.utar.socialcookingapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -41,8 +43,8 @@ public class PostLayoutFragment extends Fragment {
     private List<PostTable> postLists;
     ActivityResultLauncher<String> mGetContent;
     private List<String> followingList;
-    private ImageView search_button;
-    private TextView noPost;
+    private ImageView search_button, image_profile;
+    private TextView noPost, username;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class PostLayoutFragment extends Fragment {
         final Button btnPopup = view.findViewById(R.id.btnPopup);
         final Button btnMessenger = view.findViewById(R.id.btnMessenger);
         search_button = view.findViewById(R.id.search_button);
+        image_profile = view.findViewById(R.id.image_profile);
+        username = view.findViewById(R.id.username);
 
         btnPopup.setOnClickListener(new View.OnClickListener() {
             @Override

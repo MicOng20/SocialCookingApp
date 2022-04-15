@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,7 +42,7 @@ public class ShowUserFragment extends Fragment {
     TextView posts, followers, followings, email, username;
     Button edit_following;
 
-    List<String> mySaves;
+    private List<String> mySaves;
 
     RecyclerView recyclerView;
     GridPostAdapter gridPostAdapter;
@@ -83,22 +85,22 @@ public class ShowUserFragment extends Fragment {
         gridPostAdapter = new GridPostAdapter(getContext(), postList);
         recyclerView.setAdapter(gridPostAdapter);
 
-        recyclerView_saves = view.findViewById(R.id.rv1);
+        recyclerView_saves = view.findViewById(R.id.rv2);
         recyclerView_saves.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager_saves = new GridLayoutManager(getContext(), 3);
-        recyclerView_saves.setLayoutManager(linearLayoutManager);
+        recyclerView_saves.setLayoutManager(linearLayoutManager_saves);
         postList_saves = new ArrayList<>();
         gridPostAdapter_saves = new GridPostAdapter(getContext(), postList_saves);
-        recyclerView.setAdapter(gridPostAdapter_saves);
+        recyclerView_saves.setAdapter(gridPostAdapter_saves);
 
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView_saves.setVisibility(View.GONE);
 
-        /*userInfo();
+        userInfo();
         getFollowers();
         getNrPosts();
         myPosts();
-        mysaves();*/
+        mysaves();
 
         if(profileid.equals(firebaseUser.getUid())){}   // do nothing
         else{
@@ -223,8 +225,8 @@ public class ShowUserFragment extends Fragment {
     }
 
     private void getNrPosts(){
-        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Posts");
-        reference2.addValueEventListener(new ValueEventListener() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int i = 0;
@@ -269,7 +271,7 @@ public class ShowUserFragment extends Fragment {
     }
 
     private void mysaves(){
-        ArrayList<Object> mySaves = new ArrayList<>();
+        mySaves = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Saves")
                 .child(firebaseUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {

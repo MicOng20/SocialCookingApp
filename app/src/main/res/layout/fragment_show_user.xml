@@ -28,6 +28,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:textColor="@color/black"
+                    android:text="dsdsd"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </RelativeLayout>

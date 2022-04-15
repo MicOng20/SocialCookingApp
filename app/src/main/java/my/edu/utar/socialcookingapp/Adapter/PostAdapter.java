@@ -69,13 +69,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         isLikes(post.getPostID(), holder.like);
         nrLikes(holder.likes, post.getPostID());
         getComments(post.getPostID(), holder.comments);
-        //isSaved(post.getPostID(), holder.save);
+        isSaved(post.getPostID(), holder.save);
 
-/*        holder.image_profile.setOnClickListener(new View.OnClickListener() {
+        holder.image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
                 editor.putString("profileid", post.getPublisher());
+                editor.putString("from", "postlayout");
                 editor.apply();
 
                 ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
@@ -87,6 +88,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             public void onClick(View view) {
                 SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
                 editor.putString("profileid", post.getPublisher());
+                editor.putString("from", "postlayout");
                 editor.apply();
 
                 ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
@@ -98,22 +100,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             public void onClick(View view) {
                 SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
                 editor.putString("profileid", post.getPublisher());
+                editor.putString("from", "postlayout");
                 editor.apply();
 
                 ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new ShowUserFragment()).commit();
             }
         });
-
-        holder.grid_image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
-                editor.putString("postid", post.getPostID());
-                editor.apply();
-
-                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.content1, new PostDetailFragment()).commit();
-            }
-        });*/
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -269,7 +261,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         });
     }
 
-    /*private void isSaved(final String postid, final ImageView imageView){
+    private void isSaved(final String postid, final ImageView imageView){
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
@@ -293,5 +285,5 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
             }
         });
-    }*/
+    }
 }

@@ -168,7 +168,7 @@ public class ProfileFragment extends Fragment {
         emailTv = view.findViewById(R.id.emailTv);
         phoneTv = view.findViewById(R.id.phoneTv);
         edit = view.findViewById(R.id.fab);
-        logout = view.findViewById(R.id.logoutBtn);
+        //logout = view.findViewById(R.id.logoutBtn);
 
         //init progress dialog
         pd = new ProgressDialog(getActivity());

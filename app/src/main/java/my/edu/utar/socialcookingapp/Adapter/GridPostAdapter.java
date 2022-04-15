@@ -37,7 +37,7 @@ public class GridPostAdapter extends RecyclerView.Adapter<GridPostAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final PostTable post = mPosts.get(position);
+        PostTable post = mPosts.get(position);
         Glide.with(context).load(post.getPostImage()).into(holder.grid_image);
 
         holder.grid_image.setOnClickListener(new View.OnClickListener() {

@@ -116,6 +116,7 @@ public class UserAdapter1 extends RecyclerView.Adapter<UserAdapter1.UserViewHold
             public void onClick(View view) {
                 SharedPreferences.Editor prefEditor = sContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
                 prefEditor.putString("profileid", user.getUid());
+                prefEditor.putString("fromWhere", "chartlist");
                 prefEditor.apply();
                 prefEditor.commit();
 

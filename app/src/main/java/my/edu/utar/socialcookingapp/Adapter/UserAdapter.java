@@ -79,6 +79,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             public void onClick(View view) {
                 SharedPreferences.Editor prefEditor = mContext.getSharedPreferences("SHARED_PREFERENCES", Context.MODE_PRIVATE).edit();
                 prefEditor.putString("profileid", user.getUid());
+                prefEditor.putString("fromWhere", "searchuser");
                 prefEditor.apply();
                 prefEditor.commit();
 
