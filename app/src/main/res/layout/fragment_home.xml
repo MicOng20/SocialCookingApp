@@ -44,10 +44,14 @@
         android:id="@+id/home_recycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/recycle_row_food"
         android:layout_below="@+id/home_postbar"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/recycle_row_food" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_fab"

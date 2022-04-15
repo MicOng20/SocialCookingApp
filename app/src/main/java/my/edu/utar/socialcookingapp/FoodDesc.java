@@ -77,7 +77,7 @@ public class FoodDesc extends AppCompatActivity {
         btn_confirmation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FoodDesc.this,MainActivity.class);
+                Intent intent = new Intent(FoodDesc.this, MainActivity.class);
                 startActivity(intent);
 
                 Toast.makeText(FoodDesc.this, "Hooray! Enjoy your Food.", Toast.LENGTH_SHORT).show();

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
 
     private Context mContext;
     private List<FoodData> myFoodList;
+    private int lastPosition = -1;
 
     public FoodAdapter(Context mContext, List<FoodData> myFoodList) {
         this.mContext = mContext;
@@ -74,7 +77,23 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
                 mContext.startActivity(intent);
             }
         });
+
+        setAnimation(foodViewHolder.itemView,i);
+
     }
+
+    public void setAnimation(View viewToAnimate, int position){
+        if(position>lastPosition)
+        {
+            ScaleAnimation animation = new ScaleAnimation(0.0f,1.0f,0.0f,1.0f
+            , Animation.RELATIVE_TO_SELF,0.5f, Animation.RELATIVE_TO_SELF,0.5f);
+
+            animation.setDuration(1500);
+            viewToAnimate.startAnimation(animation);
+            lastPosition = position;
+        }
+    }
+
 
     @Override
     public int getItemCount() {
