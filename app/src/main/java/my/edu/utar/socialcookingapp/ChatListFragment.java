@@ -25,38 +25,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my.edu.utar.socialcookingapp.Adapter.UserAdapter;
+import my.edu.utar.socialcookingapp.Adapter.UserAdapter1;
 import my.edu.utar.socialcookingapp.Model.UserTable;
 
-public class SearchUserFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private UserAdapter userAdapter;
-    private List<UserTable> mUsers;
 
-    EditText search_bar;
+public class ChatListFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private UserAdapter userAdapter1;
+    private List<UserTable> sUsers;
+
+    EditText search_bar1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_search_user, container, false);
-        recyclerView = view.findViewById(R.id.search_rv);
+        // Inflate the layout for this fragment
+        //View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
+        //recyclerView = view.findViewById(R.id.display_rv);
+
+        View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
+        recyclerView = view.findViewById(R.id.display_rv);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        search_bar = view.findViewById(R.id.search_bar);
+        search_bar1 = view.findViewById(R.id.search_bar1);
 
-        mUsers = new ArrayList<>();
-        userAdapter = new UserAdapter(getContext(), mUsers, 0);
-        recyclerView.setAdapter(userAdapter);
+        sUsers = new ArrayList<>();
+        //userAdapter1 = new UserAdapter1(getContext(), sUsers);
+        //recyclerView.setAdapter(userAdapter1);
+        userAdapter1 = new UserAdapter(getContext(), sUsers, 1);
+        recyclerView.setAdapter(userAdapter1);
 
         readUsers();
-        search_bar.addTextChangedListener(new TextWatcher() {
+        search_bar1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchUsers(charSequence.toString());
+                searchUsers1(charSequence.toString());
             }
 
             @Override
@@ -66,19 +76,19 @@ public class SearchUserFragment extends Fragment {
         return view;
     }
 
-    private void searchUsers(String s){
+    private void searchUsers1(String s){
         Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("name")
                 .startAt(s)
                 .endAt(s + "\uf8ff");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mUsers.clear();
+                sUsers.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     UserTable user = dataSnapshot.getValue(UserTable.class);
-                    mUsers.add(user);
+                    sUsers.add(user);
                 }
-                userAdapter.notifyDataSetChanged();
+                userAdapter1.notifyDataSetChanged();
             }
 
             @Override
@@ -94,14 +104,13 @@ public class SearchUserFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (search_bar.getText().toString().equals("")){
-                    mUsers.clear();
+                if (search_bar1.getText().toString().equals("")){
+                    sUsers.clear();
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         UserTable user = dataSnapshot.getValue(UserTable.class);
-                        mUsers.add(user);
+                        sUsers.add(user);
                     }
-
-                    userAdapter.notifyDataSetChanged();
+                    userAdapter1.notifyDataSetChanged();
                 }
             }
 

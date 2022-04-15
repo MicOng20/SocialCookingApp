@@ -72,6 +72,7 @@ public class PostLayoutFragment extends Fragment {
                                 break;
                             }
                             case R.id.popup_story:
+                                Intent i = new Intent(getActivity(), ChatActivity.class);
                                 Toast.makeText(getContext(), "Story", Toast.LENGTH_SHORT).show();
                                 break;
                             case R.id.popup_recipe:
@@ -89,7 +90,13 @@ public class PostLayoutFragment extends Fragment {
         btnMessenger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Message", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Message", Toast.LENGTH_SHORT).show();
+                Fragment fragment = new ChatListFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content1, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 

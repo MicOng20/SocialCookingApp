@@ -17,8 +17,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -73,7 +71,6 @@ public class Connect extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private void createRequest() {
@@ -130,7 +127,6 @@ public class Connect extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            
                             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                             startActivity(intent);
 
@@ -138,6 +134,7 @@ public class Connect extends AppCompatActivity {
                         } else {
                             Toast.makeText(Connect.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
                         }
+                        // ...
                     }
                 });
     }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EDED"
+    tools:context=".ChatActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/design_default_color_primary_dark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--Receiver profile picture-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileIv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_img_white"
+            app:civ_circle_background_color="@color/design_default_color_primary_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--Receiver Name-->
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="His Name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!--Receiver status i.e. online or offline-->
+            <TextView
+                android:id="@+id/userStatusTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Online"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--Recycle View-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chatLayout"
+        android:layout_below="@+id/toolbar1" />
+
+    <!--Send message edit text and button in layout-->
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!--Edit Text: input message-->
+        <EditText
+            android:id="@+id/messageEt"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Start Typing"
+            android:padding="15dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <!--Button: send message -->
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:background="@null"
+            android:src="@drawable/ic_send"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

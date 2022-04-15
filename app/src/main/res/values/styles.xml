@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppThemeNo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+    </style>
+
+    <style name="AppTheme.AppBar.Overlay" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="AppTheme.Popup.Overlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>
