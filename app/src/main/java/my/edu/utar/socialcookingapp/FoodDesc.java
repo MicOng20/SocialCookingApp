@@ -2,9 +2,13 @@ package my.edu.utar.socialcookingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -15,6 +19,7 @@ public class FoodDesc extends AppCompatActivity {
     TextView ingredient1, amount1,ingredient2, amount2,ingredient3, amount3,
             ingredient4, amount4,ingredient5, amount5,ingredient6, amount6,
             ingredient7, amount7;
+    Button btn_confirmation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class FoodDesc extends AppCompatActivity {
         amount6 = (TextView) findViewById(R.id.fd_tvAmount6);
         ingredient7 = (TextView) findViewById(R.id.fd_tvIngredient7);
         amount7 = (TextView) findViewById(R.id.fd_tvAmount7);
+        btn_confirmation = (Button)findViewById(R.id.fd_btnConfirm);
 
         Bundle mBundle = getIntent().getExtras();
 
@@ -67,5 +73,17 @@ public class FoodDesc extends AppCompatActivity {
 
             Glide.with(this).load(mBundle.getString("Image")).into(foodImage);
         }
+
+        btn_confirmation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FoodDesc.this,MainActivity.class);
+                startActivity(intent);
+
+                Toast.makeText(FoodDesc.this, "Hooray! Enjoy your Food.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
+
 }

@@ -9,9 +9,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import my.edu.utar.socialcookingapp.Adapter.FoodAdapter;
 import my.edu.utar.socialcookingapp.Model.FoodData;
@@ -36,6 +40,7 @@ public class HomeFragment extends Fragment {
     private DatabaseReference databaseReference;
     private ValueEventListener eventListener;
     ProgressDialog progressDialog;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,5 +96,6 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
 
 }

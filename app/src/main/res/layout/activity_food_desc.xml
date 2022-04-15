@@ -197,7 +197,15 @@
             android:textSize="18sp"
             android:padding="20dp"
             android:text="Method"/>
-        
+
+        <Button
+            android:id="@+id/fd_btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="I MAKE IT!"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp" />
+
     </LinearLayout>
 
 

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import my.edu.utar.socialcookingapp.FoodDesc;
@@ -78,6 +79,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
     @Override
     public int getItemCount() {
         return myFoodList.size();
+    }
+
+    public void filteredList(ArrayList<FoodData> filterList) {
+        myFoodList = filterList;
+        notifyDataSetChanged();
+
     }
 }
 
