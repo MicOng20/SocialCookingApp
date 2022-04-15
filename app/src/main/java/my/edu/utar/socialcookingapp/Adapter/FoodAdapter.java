@@ -66,13 +66,13 @@ class FoodViewHolder extends RecyclerView.ViewHolder{
         imageView = itemView.findViewById(R.id.imageView);
         mTitle = itemView.findViewById(R.id.tvTitle);
         mDesc = itemView.findViewById(R.id.tvDescription);
-        mStep = itemView.findViewById(R.id.tvRecipeStep);
+       /* mStep = itemView.findViewById(R.id.tvRecipeStep);
         mIngredient1 = itemView.findViewById(R.id.tvIngredient1);
         mIngredient2 = itemView.findViewById(R.id.tvIngredient2);
         mIngredient3 = itemView.findViewById(R.id.tvIngredient2);
         mIngredient1Amount = itemView.findViewById(R.id.tvIngredient1Amount);
         mIngredient2Amount = itemView.findViewById(R.id.tvIngredient2Amount);
-        mIngredient3Amount = itemView.findViewById(R.id.tvIngredient3Amount);
+        mIngredient3Amount = itemView.findViewById(R.id.tvIngredient3Amount);*/
         mCardView = itemView.findViewById(R.id.cardView);
     }
 }

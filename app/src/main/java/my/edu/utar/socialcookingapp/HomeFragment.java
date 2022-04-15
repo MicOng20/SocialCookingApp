@@ -59,8 +59,6 @@ public class HomeFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading Items...");
 
-        //readRecipe();
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,26 +92,4 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    /*private void readRecipe()
-    {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                myFoodList1.clear();
-
-                for(DataSnapshot itemSnapshot: snapshot.getChildren()){
-                    FoodData foodData = itemSnapshot.getValue(FoodData.class);
-                    myFoodList1.add(foodData);
-                }
-                foodAdapter1.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }*/
 }

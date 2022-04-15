@@ -33,7 +33,10 @@ public class UploadRecipe extends AppCompatActivity {
     ImageView recipeImage;
     Uri uri;
     EditText txt_name,txt_description,ingredient1,
-            amount1,ingredient2,amount2,ingredient3,amount3,txt_method;
+            amount1,ingredient2,amount2,ingredient3,amount3,
+            ingredient4,amount4,ingredient5,amount5,
+            ingredient6,amount6, ingredient7,amount7,
+            txt_method;
     String imageUrl;
 
     @Override
@@ -49,6 +52,14 @@ public class UploadRecipe extends AppCompatActivity {
         amount2 = (EditText) findViewById(R.id.txt_recipeIngredient2Amount);
         ingredient3 = (EditText) findViewById(R.id.txt_recipeIngredient3);
         amount3 = (EditText) findViewById(R.id.txt_recipeIngredient3Amount);
+        ingredient4 = (EditText) findViewById(R.id.txt_recipeIngredient4);
+        amount4 = (EditText) findViewById(R.id.txt_recipeIngredient4Amount);
+        ingredient5 = (EditText) findViewById(R.id.txt_recipeIngredient5);
+        amount5 = (EditText) findViewById(R.id.txt_recipeIngredient5Amount);
+        ingredient6 = (EditText) findViewById(R.id.txt_recipeIngredient6);
+        amount6 = (EditText) findViewById(R.id.txt_recipeIngredient6Amount);
+        ingredient7 = (EditText) findViewById(R.id.txt_recipeIngredient7);
+        amount7 = (EditText) findViewById(R.id.txt_recipeIngredient7Amount);
         txt_method = (EditText) findViewById(R.id.txt_recipeStep);
     }
 
@@ -109,6 +120,10 @@ public class UploadRecipe extends AppCompatActivity {
                 ingredient1.getText().toString(),amount1.getText().toString(),
                 ingredient2.getText().toString(),amount2.getText().toString(),
                 ingredient3.getText().toString(),amount3.getText().toString(),
+                ingredient4.getText().toString(),amount4.getText().toString(),
+                ingredient5.getText().toString(),amount5.getText().toString(),
+                ingredient6.getText().toString(),amount6.getText().toString(),
+                ingredient7.getText().toString(),amount7.getText().toString(),
                 txt_method.getText().toString(),imageUrl
         );
         String myCurrentDateTime = DateFormat.getDateTimeInstance()
