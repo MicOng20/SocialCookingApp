@@ -118,6 +118,7 @@ public class EmailRegister extends AppCompatActivity {
                             hashMap.put("email", email1);
                             hashMap.put("uid", uid1);
                             hashMap.put("name", "");
+                            hashMap.put("onlineStatus", "online");
                             hashMap.put("phone", "");
                             hashMap.put("image", "");
                             hashMap.put("cover", "");

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +37,9 @@ public class ChatListFragment extends Fragment {
     private List<UserTable> sUsers;
 
     EditText search_bar1;
+
+    //firebase auth
+    FirebaseAuth firebaseAuth;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
