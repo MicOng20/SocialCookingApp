@@ -34,32 +34,42 @@
         <entry key="..\:/Users/USER/SocialCookingApp/app/src/main/res/layout/activity_email_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/SocialCookingApp/app/src/main/res/layout/activity_email_register.xml" value="0.264" />
         <entry key="..\:/Users/USER/SocialCookingApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/drawable-anydpi/ic_default.xml" value="0.1595" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/drawable-anydpi/ic_default_img.xml" value="0.1595" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/drawable/bg_receiver.xml" value="0.1595" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/drawable/bg_sender.xml" value="0.1595" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_chat.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_connect.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_fail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_post.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_search_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/activity_upload_recipe.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/fragment_chat_list.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/fragment_post_layout.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/fragment_search_user.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/post_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/recycle_row_food.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/row_chat_left.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/row_chat_right.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/user_item.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/user_item1.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/menu_nav.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SocialCookingApp/app/src/main/res/menu/popup_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable-anydpi/ic_add_image.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable/circle.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable/circleshape.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable/radius.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/drawable/rounded_background.xml" value="0.1975" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_connect.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_email_login.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_food_desc.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_post.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_search_menu.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/activity_upload_recipe.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_post_detail.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_post_layout.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_search_user.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/fragment_show_user.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/post_item.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/recycle_row_food.xml" value="0.2" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/layout/user_item.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/menu/menu_main.xml" value="0.25" />
+        <entry key="..\:/Users/polos/Desktop/Mobile App Assignment/Backup/TEST/app/src/main/res/menu/popup_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
