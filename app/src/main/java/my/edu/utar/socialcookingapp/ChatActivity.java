@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -110,18 +112,26 @@ public class ChatActivity extends AppCompatActivity {
                     //get data
                     String name = ""+ ds.child("name").getValue();
                     hisImage = ""+ds.child("image").getValue();
-                    //get value of online status
-                    String onlineStatus = ""+ ds.child("onlineStatus").getValue();
-                    if(onlineStatus.equals("online")){
-                        userStatusTv.setText(onlineStatus);
+                    String typingStatus = ""+ds.child("typingTo").getValue();
+
+                    //check typing status
+                    if (typingStatus.equals(myUid)){
+                        userStatusTv.setText("typing...");
                     }
                     else{
-                        //convert timestamp to proper time date
-                        //convert time stamp into dd/mm/yyyy hh:mm am/pm
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
-                        cal.setTimeInMillis(Long.parseLong(onlineStatus));
-                        String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa", cal).toString();
-                        userStatusTv.setText("Last seen at "+ dateTime);
+                        //get value of online status
+                        String onlineStatus = ""+ ds.child("onlineStatus").getValue();
+                        if(onlineStatus.equals("online")){
+                            userStatusTv.setText(onlineStatus);
+                        }
+                        else{
+                            //convert timestamp to proper time date
+                            //convert time stamp into dd/mm/yyyy hh:mm am/pm
+                            Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                            cal.setTimeInMillis(Long.parseLong(onlineStatus));
+                            String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa", cal).toString();
+                            userStatusTv.setText("Last seen at "+ dateTime);
+                        }
                     }
 
                     //set data
@@ -161,6 +171,29 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        //check edit text change listener
+        messageEt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if(s.toString().trim().length() == 0){
+                    checkTypingStatus("noOne");
+                }
+                else
+                {
+                    checkTypingStatus(hisUid); //uid of receiver
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         readMessages();
 
@@ -257,6 +290,14 @@ public class ChatActivity extends AppCompatActivity {
         dbRef.updateChildren(hashMap);
     }
 
+    private void checkTypingStatus(String typing){
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Users").child(myUid);
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("typingTo", typing);
+        //update value of onlineStatus of current user
+        dbRef.updateChildren(hashMap);
+    }
+
     @Override
     protected void onStart() {
         checkUserStatus();
@@ -272,6 +313,7 @@ public class ChatActivity extends AppCompatActivity {
         String timestamp = String.valueOf(System.currentTimeMillis());
         //set offline with last seen time stamp
         checkOnlineStatus(timestamp);
+        checkTypingStatus("noOne");
         userRefForSeen.removeEventListener(seenListener);
     }
 
