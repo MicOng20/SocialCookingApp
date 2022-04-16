@@ -1,5 +1,6 @@
 package my.edu.utar.socialcookingapp.Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -65,7 +66,7 @@ public class AdapterChat extends RecyclerView.Adapter<AdapterChat.MyHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder holder, final int i) {
+    public void onBindViewHolder(@NonNull MyHolder holder, @SuppressLint("RecyclerView") final int i) {
         // get data
         String message = chatList.get(i).getMessage();
         String timeStamp = chatList.get(i).getTimestamp();
