@@ -5,10 +5,12 @@ import my.edu.utar.socialcookingapp.Adapter.CommentAdapter;
 public class CommentTable {
     private String comment;
     private String publisher;
+    private String commentid;
 
-    public CommentTable(String comment, String publisher) {
+    public CommentTable(String comment, String publisher, String commentid) {
         this.comment = comment;
         this.publisher = publisher;
+        this.commentid = commentid;
     }
 
     public CommentTable(){}
@@ -27,5 +29,13 @@ public class CommentTable {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public String getCommentid() {
+        return commentid;
+    }
+
+    public void setCommentid(String commentid) {
+        this.commentid = commentid;
     }
 }
